@@ -20,6 +20,6 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{secrets.DOCKERHUB_PASSWORD}}
     - name: Build the Docker image
-      run: docker build -t go-crud .    
+      run: docker build -t go_crud .    
     - name: Push to Dockerhub
       run: docker push acryu01/go_crud:latest
