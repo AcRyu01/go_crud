@@ -16,4 +16,4 @@ jobs:
       - name: Delete Old Docker Container
         run: docker rm -f go_crud-container || true
       - name: Run Docker Container
-        run: sudo docker run -d -p 8080:8080 --name go_crud-container --env-file .env acryu01/go_crud
+        run: sudo docker run -d -p 8080:8080 --name go_crud-container --env-file /home/ubuntu/ENV/.env acryu01/go_crud
