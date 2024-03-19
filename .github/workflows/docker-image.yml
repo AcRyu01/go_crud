@@ -18,7 +18,7 @@ jobs:
       env:
         DOCKER_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
-      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{secrets.DOCKERHUB_PASSWORD}}
     - name: Build the Docker image
       run: docker build -t go-crud .    
     - name: Push to Dockerhub
